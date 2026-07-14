@@ -6,7 +6,7 @@ import Lenis from 'lenis'
 import Entrance from './chapters/Entrance'
 import TodayJourney from './chapters/TodayJourney'
 import LetterToYou from './chapters/LetterToYou'
-import WishForFuture from './chapters/WishForFuture'
+import PrayerForYou from './chapters/PrayerForYou'
 import GardenBlooms from './chapters/GardenBlooms'
 import FloatingPetals from './components/FloatingPetals'
 import Particles from './components/Particles'
@@ -81,7 +81,7 @@ export default function App() {
             <LetterToYou />
             <div className="h-[20vh]" />
 
-            <WishForFuture />
+            <PrayerForYou />
             <div className="h-[15vh]" />
 
             <GardenBlooms />

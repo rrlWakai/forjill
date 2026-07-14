@@ -21,7 +21,7 @@ export default function Entrance({ onEnter }: EntranceProps) {
   useEffect(() => {
     const audio = new Audio('/music.mp3')
     audio.loop = true
-    audio.volume = 0.3
+    audio.volume = 1.0
     audio.preload = 'auto'
     audioRef.current = audio
     return () => { audio.pause(); audio.src = '' }
@@ -30,19 +30,19 @@ export default function Entrance({ onEnter }: EntranceProps) {
   // Phase timeline
   useEffect(() => {
     const tl = gsap.timeline()
-    tl.to({}, { duration: 3.5 })
+    tl.to({}, { duration: 1.0 })
       .call(() => setPhase(1))
-      .to({}, { duration: 6 })
+      .to({}, { duration: 2.0 })
       .call(() => setPhase(2))
-      .to({}, { duration: 7 })
+      .to({}, { duration: 6.0 })
       .call(() => setPhase(3))
-      .to({}, { duration: 6 })
+      .to({}, { duration: 6.0 })
       .call(() => setPhase(4))
-      .to({}, { duration: 6 })
+      .to({}, { duration: 4.5 })
       .call(() => setPhase(5))
-      .to({}, { duration: 6 })
+      .to({}, { duration: 3.5 })
       .call(() => setPhase(6))
-      .to({}, { duration: 6 })
+      .to({}, { duration: 4.0 })
       .call(() => setPhase(7))
     return () => { tl.kill() }
   }, [])
@@ -50,7 +50,7 @@ export default function Entrance({ onEnter }: EntranceProps) {
   // Fade black overlay
   useEffect(() => {
     if (phase >= 1 && overlayRef.current) {
-      gsap.to(overlayRef.current, { opacity: 0, duration: 6, ease: 'power2.inOut' })
+      gsap.to(overlayRef.current, { opacity: 0, duration: 2.5, ease: 'power2.inOut' })
     }
   }, [phase])
 
