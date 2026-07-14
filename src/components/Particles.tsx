@@ -38,26 +38,30 @@ export default function Particles({
   );
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const elements =
-      containerRef.current.querySelectorAll<HTMLDivElement>(".particle");
+    const container = containerRef.current;
 
-    elements.forEach((el, i) => {
-      const p = particles[i];
-      if (!p) return;
+    if (!container) return;
+
+    const elements: NodeListOf<HTMLDivElement> =
+      container.querySelectorAll(".particle");
+
+    elements.forEach((el: HTMLDivElement, index: number) => {
+      const particle = particles[index];
+
+      if (!particle) return;
 
       gsap.set(el, {
-        x: `${p.x}vw`,
-        y: `${p.y}vh`,
-        width: p.size,
-        height: p.size,
+        x: `${particle.x}vw`,
+        y: `${particle.y}vh`,
+        width: particle.size,
+        height: particle.size,
         opacity: 0,
       });
 
       gsap.to(el, {
-        opacity: p.opacity,
-        duration: p.duration,
-        delay: p.delay,
+        opacity: particle.opacity,
+        duration: particle.duration,
+        delay: particle.delay,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
@@ -66,32 +70,12 @@ export default function Particles({
       gsap.to(el, {
         y: `+=${20 + Math.random() * 40}`,
         x: `+=${(Math.random() - 0.5) * 30}`,
-        duration: p.duration * 1.5,
-        delay: p.delay,
+        duration: particle.duration * 1.5,
+        delay: particle.delay,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
       });
     });
   }, [particles]);
-
-  return (
-    <div
-      ref={containerRef}
-      className="fixed inset-0 pointer-events-none z-4"
-      style={{ willChange: "transform" }}
-    >
-      {particles.map((p) => (
-        <div
-          key={p.id}
-          className="particle absolute rounded-full"
-          style={{
-            willChange: "transform, opacity",
-            background: `radial-gradient(circle, ${color}, transparent)`,
-            filter: `blur(${p.size > 4 ? 1 : 0}px)`,
-          }}
-        />
-      ))}
-    </div>
-  );
 }
