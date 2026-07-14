@@ -1,4 +1,6 @@
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { useMemo } from "react";
 import { gsap } from "gsap";
 
 interface Particle {
