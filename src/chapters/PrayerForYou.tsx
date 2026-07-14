@@ -520,22 +520,7 @@ export default function PrayerForYou() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 3, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <p
-            className="font-display text-base md:text-lg lg:text-xl italic leading-[1.9] tracking-[0.03em] mb-3"
-            style={{ color: "rgba(253,248,240,0.8)" }}
-          >
-            "For I know the plans I have for you," declares the Lord, "plans to
-            prosper you and not to harm you, plans to give you hope and a
-            future."
-          </p>
-          <p
-            className="font-display text-sm md:text-base italic tracking-[0.04em] mb-10"
-            style={{ color: "#C4A265" }}
-          >
-            — Jeremiah 29:11
-          </p>
-        </motion.div>
+        ></motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
