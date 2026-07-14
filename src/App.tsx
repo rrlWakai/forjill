@@ -76,13 +76,13 @@ export default function App() {
             <div className="h-screen" />
 
             <TodayJourney />
-            <div className="h-[25vh]" />
+            <div className="section-spacer" />
 
             <LetterToYou />
-            <div className="h-[20vh]" />
+            <div className="section-spacer" />
 
             <PrayerForYou />
-            <div className="h-[15vh]" />
+            <div className="section-spacer" />
 
             <GardenBlooms />
             <div className="h-[25vh]" />

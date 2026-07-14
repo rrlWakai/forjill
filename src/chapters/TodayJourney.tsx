@@ -111,13 +111,13 @@ function JourneyCard({ stop, index }: { stop: Stop; index: number }) {
       transition={{ duration: 2.2, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       className="w-full max-w-xl mx-auto">
 
-      <div className="relative rounded-2xl p-7 md:p-9 transition-all duration-700 group"
+      <div className="relative rounded-2xl p-7 md:p-9 transition-all duration-700 group hover:scale-[1.015]"
         style={{
-          background: 'rgba(255,255,255,0.12)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          border: '1px solid rgba(255,255,255,0.18)',
-          boxShadow: '0 8px 32px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.2)',
+          background: 'rgba(255,255,255,0.10)',
+          backdropFilter: 'blur(18px)',
+          WebkitBackdropFilter: 'blur(18px)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.03), inset 0 1px 0 rgba(255,255,255,0.18)',
         }}>
 
         {/* Subtle top highlight */}
@@ -149,6 +149,27 @@ function JourneyCard({ stop, index }: { stop: Stop; index: number }) {
         </div>
       </div>
     </motion.div>
+  )
+}
+
+function JourneyStop({ stop, index }: { stop: Stop; index: number }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const isInView = useInView(ref, { amount: 0.3, once: true })
+  return (
+    <div ref={ref} className="relative pl-16 md:pl-0">
+      <motion.div
+        initial={{ scale: 0, opacity: 0 }}
+        animate={isInView ? { scale: 1, opacity: 1 } : {}}
+        transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-8 z-10 flex items-center justify-center"
+        style={{ width: 16, height: 16 }}>
+        <div className="w-2.5 h-2.5 rounded-full" style={{
+          background: 'radial-gradient(circle, #D4A5A5 30%, rgba(212,165,165,0.3) 100%)',
+          boxShadow: '0 0 12px rgba(212,165,165,0.4)',
+        }} />
+      </motion.div>
+      <JourneyCard stop={stop} index={index} />
+    </div>
   )
 }
 
@@ -190,28 +211,9 @@ export default function TodayJourney() {
 
         {/* Journey stops - centered */}
         <div className="space-y-16 md:space-y-20">
-          {stops.map((stop, i) => {
-            const ref = useRef<HTMLDivElement>(null)
-            const isInView = useInView(ref, { amount: 0.3, once: true })
-            return (
-              <div key={i} ref={ref} className="relative pl-16 md:pl-0">
-                {/* Timeline dot */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={isInView ? { scale: 1, opacity: 1 } : {}}
-                  transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute left-3.5 md:left-1/2 md:-translate-x-1/2 top-8 z-10 flex items-center justify-center"
-                  style={{ width: 16, height: 16 }}>
-                  <div className="w-2.5 h-2.5 rounded-full" style={{
-                    background: 'radial-gradient(circle, #D4A5A5 30%, rgba(212,165,165,0.3) 100%)',
-                    boxShadow: '0 0 12px rgba(212,165,165,0.4)',
-                  }} />
-                </motion.div>
-
-                <JourneyCard stop={stop} index={i} />
-              </div>
-            )
-          })}
+          {stops.map((stop, i) => (
+            <JourneyStop key={i} stop={stop} index={i} />
+          ))}
         </div>
       </div>
 

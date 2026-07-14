@@ -103,7 +103,6 @@ export default function Entrance({ onEnter }: EntranceProps) {
       }).catch(() => {})
     }
     onEnter()
-    onEnter()
   }, [onEnter])
 
   const textFade = {
@@ -129,22 +128,22 @@ export default function Entrance({ onEnter }: EntranceProps) {
 
       {/* ── Overlay Layer 1: Black vertical gradient ── */}
       <div className="absolute inset-0 z-[2]" style={{
-        background: 'linear-gradient(180deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.75) 100%)',
+        background: 'linear-gradient(180deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.48) 35%, rgba(0,0,0,0.42) 60%, rgba(0,0,0,0.72) 100%)',
       }} />
 
       {/* ── Overlay Layer 2: Radial glow behind text ── */}
       <div className="absolute inset-0 z-[3]" style={{
-        background: 'radial-gradient(ellipse 60% 45% at 50% 50%, rgba(196,162,101,0.10) 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse 65% 50% at 50% 48%, rgba(196,162,101,0.12) 0%, transparent 70%)',
       }} />
 
       {/* ── Overlay Layer 3: Soft vignette ── */}
       <div className="absolute inset-0 z-[3]" style={{
-        background: 'radial-gradient(ellipse at center, transparent 25%, rgba(0,0,0,0.55) 100%)',
+        background: 'radial-gradient(ellipse at center, transparent 20%, rgba(0,0,0,0.5) 100%)',
       }} />
 
-      {/* ── Atmospheric haze ── */}
+      {/* ── Atmospheric haze at bottom ── */}
       <div className="absolute inset-0 z-[4]" style={{
-        background: 'linear-gradient(180deg, transparent 60%, rgba(245,240,232,0.04) 85%, rgba(245,240,232,0.08) 100%)',
+        background: 'linear-gradient(180deg, transparent 55%, rgba(245,240,232,0.05) 80%, rgba(245,240,232,0.1) 100%)',
       }} />
 
       {/* ── Music Control (top-right) ── */}
@@ -177,7 +176,7 @@ export default function Entrance({ onEnter }: EntranceProps) {
       </AnimatePresence>
 
       {/* ── Hero Content ── */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 sm:px-8 md:px-12 text-center flex flex-col items-center justify-center">
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 sm:px-8 md:px-12 text-center flex flex-col items-center justify-center min-h-screen py-16">
 
         <AnimatePresence mode="wait">
           {phase === 2 && (
@@ -267,7 +266,7 @@ export default function Entrance({ onEnter }: EntranceProps) {
                 <motion.button initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 2.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   onClick={handleEnter}
-                  className="group relative px-10 sm:px-12 py-4 sm:py-4.5 rounded-full cursor-pointer transition-all duration-700 ease-out"
+                  className="group relative px-10 sm:px-14 py-4 sm:py-5 rounded-full cursor-pointer transition-all duration-700 ease-out"
                   style={{
                     background: 'rgba(255,255,255,0.06)',
                     backdropFilter: 'blur(24px)',
@@ -278,8 +277,8 @@ export default function Entrance({ onEnter }: EntranceProps) {
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = 'rgba(196,162,101,0.12)'
                     e.currentTarget.style.borderColor = 'rgba(196,162,101,0.35)'
-                    e.currentTarget.style.boxShadow = '0 4px 32px rgba(0,0,0,0.1), 0 0 50px rgba(196,162,101,0.12), inset 0 1px 0 rgba(255,255,255,0.1)'
-                    e.currentTarget.style.transform = 'translateY(-2px)'
+                    e.currentTarget.style.boxShadow = '0 8px 40px rgba(0,0,0,0.12), 0 0 60px rgba(196,162,101,0.1), inset 0 1px 0 rgba(255,255,255,0.1)'
+                    e.currentTarget.style.transform = 'translateY(-3px)'
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
@@ -290,9 +289,9 @@ export default function Entrance({ onEnter }: EntranceProps) {
                   <span className="relative z-10 flex items-center gap-3"
                     style={{
                       fontFamily: 'Inter, sans-serif',
-                      fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)',
+                      fontSize: 'clamp(0.7rem, 1.4vw, 0.9rem)',
                       fontWeight: 500,
-                      letterSpacing: '0.2em',
+                      letterSpacing: '0.22em',
                       textTransform: 'uppercase',
                       color: '#FDF8F0',
                     }}>

@@ -98,14 +98,14 @@ export default function GardenBackground({ scrollProgress = 0 }: { scrollProgres
 
       {/* Layer 4: Atmospheric haze at bottom */}
       <div className="absolute inset-0" style={{
-        background: 'linear-gradient(180deg, transparent 50%, rgba(245,240,232,0.1) 80%, rgba(245,240,232,0.18) 100%)',
+        background: 'linear-gradient(180deg, transparent 45%, rgba(245,240,232,0.08) 75%, rgba(245,240,232,0.15) 100%)',
         transform: `translateY(${parallaxOffset * 0.5}px)`,
         willChange: 'transform',
       }} />
 
       {/* Layer 5: Vignette */}
       <div className="absolute inset-0" style={{
-        background: 'radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.45) 100%)',
+        background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.4) 100%)',
       }} />
 
       {/* Garden SVG overlay */}

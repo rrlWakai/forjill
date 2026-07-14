@@ -68,6 +68,12 @@ body {
   background-clip: text;
 }
 
+/* Section transition spacer — consistent vertical rhythm between chapters */
+.section-spacer {
+  height: 18vh;
+  min-height: 120px;
+}
+
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   33% { transform: translateY(-12px) rotate(3deg); }
@@ -129,4 +135,17 @@ body {
     0 4px 12px rgba(0, 0, 0, 0.06),
     0 12px 40px rgba(0, 0, 0, 0.08),
     inset 0 0 80px rgba(210, 180, 140, 0.08);
+}
+
+/* Smooth section fade-in on scroll */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

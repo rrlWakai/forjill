@@ -560,10 +560,6 @@ export default function LetterToYou() {
                 ))}
               </div>
 
-              {/* Paper dimensions watermark */}
-              <div className="absolute bottom-3 sm:bottom-6 right-3 sm:right-8 font-heading text-[9px] sm:text-[10px] md:text-[11px] text-gold/45 pointer-events-none tracking-widest uppercase select-none">
-                Size: Grand Folio (8.5 × 11.5 in)
-              </div>
             </div>
           </motion.div>
         )}

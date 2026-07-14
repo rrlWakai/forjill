@@ -50,11 +50,11 @@ export default function GardenBlooms() {
         ))}
       </div>
 
-      <div className="relative z-10 text-center px-8 max-w-3xl">
+      <div className="relative z-10 text-center px-6 sm:px-8 max-w-3xl">
         <motion.h2 initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
           animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 3.5, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-[0.06em] mb-4"
+          className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-[0.06em] mb-4"
           style={{
             background: 'linear-gradient(135deg, #FDF8F0 0%, #C4A265 35%, #D4B878 65%, #FDF8F0 100%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -64,7 +64,7 @@ export default function GardenBlooms() {
         <motion.h1 initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
           animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 3.5, delay: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-[0.04em] leading-none mb-20"
+          className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-[0.04em] leading-none mb-16 sm:mb-20"
           style={{
             background: 'linear-gradient(135deg, #FDF8F0 0%, #C4A265 30%, #D4B878 60%, #FDF8F0 100%)',
             WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
@@ -72,15 +72,15 @@ export default function GardenBlooms() {
           }}>Jillian</motion.h1>
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 3, delay: 2, ease: [0.22, 1, 0.36, 1] }} className="space-y-8">
-          <p className="font-heading text-lg md:text-xl lg:text-2xl font-light leading-[1.9] tracking-[0.03em]"
+          transition={{ duration: 3, delay: 2, ease: [0.22, 1, 0.36, 1] }} className="space-y-6 sm:space-y-8">
+          <p className="font-heading text-base sm:text-lg md:text-xl lg:text-2xl font-light leading-[1.9] tracking-[0.03em]"
             style={{ color: 'rgba(253,248,240,0.8)' }}>
             Thank you for making my world brighter every single day.</p>
-          <p className="font-heading text-base md:text-lg lg:text-xl font-light leading-[1.9] tracking-[0.03em]"
+          <p className="font-heading text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.9] tracking-[0.03em]"
             style={{ color: 'rgba(253,248,240,0.65)' }}>
             I hope this new year of your life brings you happiness, peace,
             beautiful memories, and dreams that come true.</p>
-          <p className="font-heading text-base md:text-lg lg:text-xl font-light leading-[1.9] tracking-[0.03em]"
+          <p className="font-heading text-sm sm:text-base md:text-lg lg:text-xl font-light leading-[1.9] tracking-[0.03em]"
             style={{ color: 'rgba(253,248,240,0.65)' }}>
             I'll always be cheering for you.</p>
         </motion.div>

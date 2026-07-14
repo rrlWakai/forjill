@@ -196,12 +196,12 @@ export default function PrayerForYou() {
         }} />
 
         {/* Card */}
-        <div className="relative rounded-2xl p-8 md:p-14 lg:p-16"
+        <div className="relative rounded-2xl p-7 sm:p-10 md:p-14 lg:p-16"
           style={{
-            background: 'linear-gradient(170deg, rgba(250,245,236,0.95) 0%, rgba(245,237,224,0.92) 40%, rgba(240,232,219,0.9) 100%)',
+            background: 'linear-gradient(170deg, rgba(250,245,236,0.96) 0%, rgba(245,237,224,0.93) 40%, rgba(240,232,219,0.91) 100%)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
-            boxShadow: '0 16px 64px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.5)',
+            boxShadow: '0 20px 70px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.5)',
           }}>
 
           {/* Paper texture */}
@@ -219,7 +219,7 @@ export default function PrayerForYou() {
           <FloralBorder />
 
           {/* Prayer content */}
-          <div className="relative z-10 space-y-6">
+          <div className="relative z-10 space-y-5 sm:space-y-6">
             {prayerParagraphs.map((para, i) => (
               <motion.div key={i}
                 initial={{ opacity: 0, y: 18, filter: 'blur(3px)' }}
